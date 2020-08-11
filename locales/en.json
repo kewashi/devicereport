@@ -1,0 +1,17 @@
+{
+	"pages.mainPage.name": "pages.mainPage.name",
+	"pages.mainPage.sections.sensors.name": "pages.mainPage.sections.sensors.name",
+	"pages.mainPage.settings.contactSensor.name": "pages.mainPage.settings.contactSensor.name",
+	"Tap to set": "Tap to set",
+	"pages.mainPage.sections.lights.name": "pages.mainPage.sections.lights.name",
+	"pages.mainPage.settings.lights.name": "pages.mainPage.settings.lights.name",
+	"pages.mainPage.sections.Items to Include.name": "pages.mainPage.sections.Items to Include.name",
+	"pages.mainPage.settings.Select Items to Include.name": "pages.mainPage.settings.Select Items to Include.name",
+	"pages.mainPage.sections.contacts.name": "pages.mainPage.sections.contacts.name",
+	"pages.mainPage.sections.motions.name": "pages.mainPage.sections.motions.name",
+	"Which motion sensors?": "Which motion sensors?",
+	"pages.mainPage.sections.switches.name": "pages.mainPage.sections.switches.name",
+	"Which switch?": "Which switch?",
+	"pages.mainPage.sections.dimmers.name": "pages.mainPage.sections.dimmers.name",
+	"Which dimmers?": "Which dimmers?"
+}

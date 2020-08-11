@@ -1,0 +1,22 @@
+{
+  "name": "devicereport",
+  "version": "1.0.0",
+  "description": "SmartThings webhook SmartApp to report device status",
+  "main": "devicereport.js",
+  "author": "SmartThings",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node devicereport.js"
+  },
+  "dependencies": {
+    "@smartthings/smartapp": "^1.13.2",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "ngrok": "^3.2.7",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {}
+}
