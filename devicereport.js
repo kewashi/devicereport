@@ -17,7 +17,7 @@ const baseUrl    = "https://api.smartthings.com";
 var appId;
 
 var GLB = {};
-var clients = [];
+// var clients = [];
 var allthings = {};
 
 var app = express();
@@ -32,14 +32,14 @@ app.use(cookieParser());
 var httpServer = http.createServer(app);
 // var httpsServer = https.createServer(credentials, app);
 
-function setCookie(res, thevar, theval, days) {
-    var options = {SameSite: "lax"};
-    if ( !days ) {
-        days = 365;
-    }
-    options.maxAge = days*24*3600*1000;
-    res.cookie(thevar, theval, options);
-}
+// function setCookie(res, thevar, theval, days) {
+//     var options = {SameSite: "lax"};
+//     if ( !days ) {
+//         days = 365;
+//     }
+//     options.maxAge = days*24*3600*1000;
+//     res.cookie(thevar, theval, options);
+// }
 
 function curl_call(host, headertype, nvpstr, formdata, calltype, callback) {
     var opts = {url: host};
@@ -143,12 +143,13 @@ const smartapp = new SmartApp()
         appId = updatedId;
         await context.api.subscriptions.unsubscribeAll(updatedId);
 
-        var myids = {switch: "switch", switchlevel: "switchLevel", bulb: "colorControl", 
+        var myids = {switch: "switch", switchlevel: "switchLevel", bulb: "colorControl", button: "button",
                      presence: "presence", motion: "motionSensor", 
                      contact: "contactSensor", door: "doorControl", lock: "lock",
-                     thermostat: "thermostat", temperature: "temperatureMeasurement", 
-                     illuminance: "illuminanceMeasurement", weather: "weather" };
-        var regarray = [];
+                     thermostat: "thermostat", temperature: "temperatureMeasurement", illuminance: "illuminanceMeasurement",
+                     water: "waterSensor", valve: "valve", smoke: "smokeDetector",
+                     music: "musicPlayer", audio: "audioNotification",
+                     other: "other", actuator: "actuator" };
         for ( var swtype in myids ) {
     
             var id = myids[swtype];
@@ -234,8 +235,9 @@ app.get('*', function (req, res) {
         // readRoomThings("main", uname);
         // $tc = mainPage(uname, req.headers.host, req.path);
         $tc = utils.getHeader();
+        $tc = $tc + "URL: " + GLB.returnURL + "<br />";
         for ( var idx in allthings ) {
-            $tc = $tc + "<div>" + allthings[idx].name;
+            $tc = $tc + "<div class=\"filteroption\">" + allthings[idx].name;
             for (var subid in allthings[idx].value)  {
                 $tc = $tc + "<div>" + subid + ": " + allthings[idx].value[subid] + "</div>";
             }
